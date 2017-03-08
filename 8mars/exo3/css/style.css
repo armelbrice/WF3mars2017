@@ -19,6 +19,10 @@ Style reset
         /*1.5rem= 15px*/
     }
 
+    section{
+        margin-bottom: 4rem;
+    }
+
     
 
     /*em/rem*/
@@ -54,7 +58,7 @@ li{
 }
 
 
-
+/* Style largeur site*/
 /*Limiter la largeur de header, main et footer à 950px*/
     header, main, footer{
         max-width: 85rem;
@@ -62,3 +66,69 @@ li{
         /* Centrer une balise de type block réduite en largeur*/
         margin: 2rem auto;
     }
+
+/* 
+    Mise en forme typographique
+    */
+        .presentation{
+
+            /* Modifier la famille de caractère de la font, la principale entre guillemet*/
+            font-family: "Arial", sans-serif;
+            /* Modifier la taille de la font*/
+            font-size: 1.7rem;
+
+            /* Modifier l'interlignage*/
+            line-height: 2em;
+        
+
+        /* Modifier la graisse de la font*/
+        font-weight: bold;
+
+        /* Ajouter une ombre portée, x y degradé*/
+        text-shadow: 0 0 .5rem blue;
+
+        /* Modifier la casse de la font*/
+        text-transform: uppercase;
+
+        /* Modifier le style de la font (italic)*/
+        font-style: italic;
+
+        /* Modifier la décoration de la font*/
+        text-decoration: underline;
+
+        /* Modifier la couleur de la font*/
+        color: white;
+
+        padding: 2rem;
+        background-color: red;
+        margin: 4rem auto;
+
+        }
+
+/* 
+Utilisation des couleurs
+*/
+   #portfolio{
+       
+
+       background-color: #3f9c5b; /* Référence hexadécimale*/
+       color: white; /* Nom intelligible*/
+
+       text-align: center; /* Agit sur les textes et sur les balises inline(enfant)*/
+       
+       
+   }
+
+   #portfolio article{
+       /* Utiliser RGBA pour modifier l'opacité de la couleur*/
+       background-color: rgba(255, 255, 255, .5);
+
+       color: black;
+       padding: 2rem;
+       margin: 1rem;
+
+       /* Faire en sorte d'afficher les articles sur 3 colonnes*/
+       display: inline-block;
+
+  }
+
