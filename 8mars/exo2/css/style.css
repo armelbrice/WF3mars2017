@@ -1,5 +1,65 @@
-/*Sélectionner la balise h2*/
-h2{
+/*Sélecteur logique: une balise html*/
+  /*Faire en sorte que tous les textes de la page soient centrés*/
+  body{
+      text-align: center;
+  }
+
+    /*Sélectionner les balises h2 et les balises h3*/
+h2, h3{
     /*Changer la couleur de la font*/
     color: red;
 }
+
+/*Sélectionner les balises a*/
+a{
+    /*Supprimer le soulignement*/
+    text-decoration: none;
+}
+
+
+/*Sélecteurs imbriqués pour une balise à l'intérieur d'une autre*/
+h2 b{
+    color: green;
+}
+
+.redBackground h2, .redBackground h2 b{
+    color: white;
+}
+
+
+/*
+Sélecteurs par class
+*/
+   /*Sélectionner la class .redBackground*/
+   .redBackground{
+       /*Modifier la couleur de fond*/
+       background-color: red;
+
+   }
+
+   /*
+   Sélecteur par id
+   */
+      /*Sélectionner l'id bigTitle*/
+      #bigTitle{
+          /*Modifier la taille de la font*/
+          font-size: 3rem;
+      }
+
+/*
+Sélecteur d'interaction (état)
+*/
+   /*Changer la couleur des balises a au survol*/
+   a:hover{
+       color: red;
+   }
+   .redBackground:hover{
+       background-color: green;
+   }
+
+   #bigTitle:hover{
+       color: greenyellow;
+   }
+
+
+
