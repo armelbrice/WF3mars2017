@@ -9,7 +9,7 @@ Style Reset
 
   /* Faire en sorte que 1rem soit égal à 10px */
   html{
-      font-size: 62,5%
+      font-size: 62.5%;
   }
 
   body{
@@ -56,6 +56,19 @@ Style Reset
         /* Ajouter une marge extérieure en bas de 30px */
         margin-bottom: 3rem;
     }
+
+/* 
+Style largeur maximum
+*/
+    nav ul, #portfolio, #aboutMe p, #contact, footer section{
+        /* Définir une largeur maximum */
+        max-width: 95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
+
+
 /*
 Style header
 */
