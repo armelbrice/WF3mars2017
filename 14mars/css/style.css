@@ -1,5 +1,14 @@
  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
-
+@-webkit-keyframes pictoHeaderAnim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); }
+    100% { transform: translateY(0); }
+}
+@keyframes pictoHeaderAnim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1rem); }
+    100% { transform: translateY(0); }
+}
  /* 
  Style reset
  */
@@ -61,6 +70,10 @@
           padding: 2rem 0;
       }
 
+      img{
+          max-width: 100%;
+      }
+
 
 /* 
 Style header
@@ -115,6 +128,18 @@ Style header
         /* Créer un rond avec une balise carrée */
         border-radius: 50%;
 
+        /* Appliquer l'animation */
+        -webkit-animation-name: pictoHeaderAnim;
+        animation-name: pictoHeaderAnim;
+
+        /* Définir la durée */
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+
+        /* Définir le nombre de boucle */
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
     }
 
     a img{
@@ -137,6 +162,7 @@ Style header
 
       /* CallToAction */
       .callToAction {
+          text-align: left;
           color: white;
           border: .1rem solid white;
           display: inline-block;
@@ -150,13 +176,41 @@ Style header
           border-color: #349aa6;
       }
 
+      .callToAction:before{
+          /* Afficher une image dans le content */
+          content: url(../img/puce-bas-blanche.png);
+
+          display: block;
+          height: 3rem;
+          width: 3rem;
+          
+          /* Habiller la balise */
+          float: left;
+          margin-right: 1.5rem;
+      }
+
+      .callToAction.blue:before{
+          content: url(../img/puce-droite-bleu.png);
+      }
+
+      .callToAction:after{
+          /* Annuler le flottement */
+          clear: both;
+      }
 
 
-      /* Solutions */
-      section:nth-child(3){
+
+
+
+
+
+      /* Solutions, chiffres */
+      section:nth-child(3), section:nth-child(7), footer{
           color: white;
           background: #349aa6;
       }
+
+      
 
       /* Inscrivez-vous */
       [alt="Logo du salon des maires"]{
@@ -170,6 +224,9 @@ Style header
 
           /* bloquer les enfants dans le parent */
           position: relative;
+
+          /* Masquer les balises qui dépassent */
+          overflow: hidden;
 
 
       }
@@ -203,6 +260,31 @@ Style header
 
       section:nth-child(6) a{
           color: white;
+      }
+
+      /* Chiffres */
+      section:nth-child(7) figure{
+          display: inline-block;
+          vertical-align: top;
+          width: 49%;
+      }
+
+      /* Présentation */
+      article + img{
+          width:15rem;
+          margin-bottom: 4rem;
+      }
+
+      iframe{
+          border: none;
+          width: 100%;
+          min-height: 30rem;
+      }
+
+      /* Footer */
+      footer{
+          font-size: 1rem;
+          padding: 1rem;
       }
 
 
