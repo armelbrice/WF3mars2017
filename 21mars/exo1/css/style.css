@@ -76,6 +76,7 @@ Style Reset
 
         /* Bloquer les enfants dans le parent */
         position: relative;
+        text-indent: 1rem;
         
     }
     
@@ -148,7 +149,7 @@ Style Reset
     Style main 
     */
     main{
-        padding: 4rem 2rem;
+        padding: 4rem 2rem 10rem 2rem;
     }
 
     
@@ -219,6 +220,41 @@ Style Reset
 
     }
 
+    
+    /* Style Contacts*/
+
+    form{
+        margin: 2rem auto;
+    }
+
+    textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: .1rem dotted #3C2558;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    textarea{
+        min-height: 15rem;
+    }
+
+    form :last-child{
+        color: white;
+        background: #3C2558;
+        border: none;
+        padding: .5rem .1rem;
+    }
+
+    iframe{
+        width: 100%;
+        min-height: 20rem;
+        border: none;   
+    }
+
+
+
 
 
     /* 
@@ -244,6 +280,81 @@ Style Reset
         margin-bottom: 1rem;
     }
 
+
+    /*
+    Requêtes @media
+    */
+       /* Ecran d'une taille minimale de 400px */
+       @media screen and (min-width:400px){
+
+           /* Style portfolio */
+           .portfolioPage article{
+                
+                 /* passer en 2 colonnes */
+                 display: inline-block;
+                 width: 49%;
+
+                 /* Gérer les paddings */
+                 padding: 0 1rem 0 0;
+            }
+
+            /* Sélectionner toutes les 2 balises à partir de la 2ème */
+            .portfolioPage article:nth-child( 2n + 2 ){
+                padding: 0 0 0 1rem;
+
+
+            }
+
+
+       }
+
+       /* Ecran d'une taille minimale de 750px */
+       @media screen and (min-width: 750px){
+
+           /* Style reset */
+           main, h1, nav{
+               max-width: 85rem;
+               /* centrer dans la largeur */
+               margin: auto;
+           }
+
+           h1{
+               font-size: 4rem;
+               
+           }
+
+           h1 span{
+               display: initial;
+
+           }
+
+           /* Style header */
+
+             header{
+                 text-align: left;
+             }
+
+             /* Masquer le burger */
+             header > a{
+                 display: none;
+             }
+
+             /* Afficher la nav */
+             nav{
+                 display: block;
+             }
+
+             /* Aligner les item de la nav */
+             nav li{
+                 display: inline-block;
+                 text-indent: 1rem;
+             }
+
+             /* Style main */
+             main{
+                 padding: 4rem 0 1rem 0;
+             }
+       }
 
 
 
