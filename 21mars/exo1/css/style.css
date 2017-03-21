@@ -151,14 +151,12 @@ Style Reset
         padding: 4rem 2rem;
     }
 
-    article a{
-        display: none;
-    }
+    
 
     /* Style portfolio */
     figure{
         position: relative;
-        margin: 2rem auto;
+        
     }
 
     figure:after{
@@ -176,7 +174,7 @@ Style Reset
         position: absolute;
         bottom: 0;
         left:50%;
-        width: 70%;
+        width: 15rem;
 
         background: white;
         padding: 1rem;
@@ -192,6 +190,35 @@ Style Reset
         display: block;
 
     }
+
+    .portfolioPage article{
+        position: relative;
+        margin: 2rem auto;
+
+        /* Masquer  les éléments qui dépassent */
+        overflow: hidden;
+    }
+
+    .portfolioPage main a{
+        color: white;
+        background: #3C2558;
+        padding: .5rem 1rem;
+
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        z-index: 1;
+
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    /* Changer la propriété top de la balise "a" au survol de l'article */
+    .portfolioPage article:hover a{
+        top: 40%;
+
+    }
+
 
 
     /* 
