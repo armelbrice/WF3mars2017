@@ -1,0 +1,166 @@
+/* Importer FontAwesome */
+/*@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);*/
+
+/* Importer les polices */
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Roboto:400,700|Volkhov');
+
+/*
+Style Reset
+*/
+    *{
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer les padding et les border dans la taille des boîtes */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Ramener la valeur de 1rem à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: 'Droid Sans', sans-serif;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family: 'Roboto', sans-serif;
+        font-size: .5em;  /* la moitié de h1 car taille relative à h1 */
+        display: block;
+        /* span est une balise inline qu'on met en bloc pour le chasser de la ligne et le passer en dessous */
+    }
+
+    a, header li{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+         /* Supprimer le style des listes */
+         ul{
+             list-style: none;
+         }
+
+    /*
+    Style header
+    */
+    header{
+        color: white;
+        background-color: #3C2558;
+        padding: 2rem;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+        
+    }
+    
+    /* la nav disparait dans un premier temps a cause du menu burger */
+    nav{
+        /* display: none;  */
+        
+    }
+
+    header > a{
+        /* La balise "a" qui est enfant direct de header */
+        font-size: 1.9rem;
+        color: #3C2558;
+        background: white;
+        width: 4rem;
+        height: 4rem;
+        padding-top: .7rem;
+        border: .2rem solid #3C2558;
+        display: inline-block; /* pour donner propriétés inline et block */
+
+        /* positionner précisément la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); /* décalé vers le haut et vers la gauche */
+        
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+
+    }
+
+    header > a:hover{
+        color: white;
+        background: #3C2558;
+        border-color: white;    
+    }
+
+    /* Afficher la nav au survol de la balise "a" du header */
+
+    header > a:hover + nav {
+        display: block;
+    }
+
+    header li{ 
+        /* on prend li et pas "a" car li est de type block */
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.51);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    header li:hover{
+        /* pour le fond blanc de l'animation */
+        background: white;
+        
+    }
+
+    header li:hover a{
+        color: #3C2558;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    /* 
+    Style footer 
+    */
+    footer{
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; /* il prend toute la largeur de la page */
+        background: #3C2558;
+        padding: 2rem;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    /* Toutes les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+
+
+
+
+
+
+    
