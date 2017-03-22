@@ -1,0 +1,174 @@
+/* Importer les polices */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:400,700');
+
+/*
+Style Reset
+*/
+
+ *{
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer les padding et les border dans la taille des boîtes */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Ramener la valeur de 1rem à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    img{
+             max-width: 100%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        
+    }
+    
+    h1{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        line-height: 1em;
+    }
+
+    h2{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        color: white;
+        border: .1rem solid #0b0b2d;
+        background-color: #0b0b2d;
+        width: 80%;
+        margin-bottom: 2rem;
+        
+
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+
+    /*
+    Style header
+    */
+    header{
+        
+        background-image: url(../img/2.jpg);
+        position: relative;
+        text-align: right;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background-size: cover;
+    
+        
+        
+    }
+
+    nav a{
+        color: white;
+        
+    }
+
+    
+    nav li:first-of-type {
+        font-size: 1.8rem;
+        display: inline-block;
+        position: absolute;
+        left: 20%;
+        top: 37%;
+
+
+
+    }
+
+    
+    header li{
+        display: inline-block;
+        
+    }
+
+    /* Style main */
+    
+    /* section 1 */
+    section:first-of-type img{
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        width: 12rem;
+        float: left;
+
+    }
+
+    header li:not(first-of-type){
+        font-size: .9rem;
+    }
+
+    main section p:first-of-type{
+        text-align: center;
+        margin-bottom: 6rem;
+
+        
+        
+    }
+
+    /* Section 2 */
+    main section:nth-child(2) p{
+        column-count: 2;
+        text-align: left;
+
+    }
+
+    section:nth-child(2){
+        clear: both;
+    }
+
+    /* Section 3 */
+
+    figure{
+        position: relative;
+        margin-bottom: 1rem;
+       
+        
+
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background:grey;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    footer{
+        color: white;
+        background: grey;
+        padding: 2rem;
+    }
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+    
+
+
+
