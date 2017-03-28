@@ -1,0 +1,200 @@
+/* Importer FontAwesome */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* importer police google font courgette */
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+/*
+Style reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem; /* => 15px */
+    
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*
+Style header
+*/
+li{
+    display: inline-block;
+    padding: 2rem;
+    color: white;
+    
+}
+
+/* Faire disparaitre les 3 élements de la nav en mode smartphone */
+span{
+    display: none;
+}
+
+header{
+    background-color: #C55394;
+    
+}
+
+li:first-child{
+    font-family: 'Courgette', cursive;
+    font-size: 2.5rem;
+}
+
+nav li:hover{
+    color: #EB43A3;
+}
+
+/*
+Style main
+*/
+
+figure{
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+   
+
+}
+
+section:nth-child(3)  figure figcaption{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    padding: 1rem;
+}
+
+figcaption h1{
+    position: absolute;
+    color: #C55394;
+    
+    top: 50%;
+    left: 10%;
+    font-family: 'Courgette', cursive;
+}
+
+main{
+    
+    background-image: url(../img/background.png);
+    
+    margin: 2rem; 
+
+    
+}
+
+i:first-of-type , h2:first-of-type{
+    display: inline-block;
+    margin-right: 1rem;
+    color: #C55394;
+    margin-bottom: 4rem;
+    
+}
+
+h1, h2, h3{
+    font-family: 'Courgette', cursive;
+
+}
+
+section{
+    margin-bottom: 3rem;
+}
+
+h3{
+    color: #C55394;
+    margin: 2rem 0;
+
+}
+
+/*
+Style footer
+*/
+
+footer p{
+    color: white;
+    display: inline-block;
+    
+
+}
+
+footer{
+    background: #C55394;
+    padding: 2rem;
+    text-align: right;
+}
+
+/*
+Requêtes media
+*/
+    /* Ecran d'une taille minimale de 550px */
+    @media screen and (min-width: 550px){
+
+        /* Style Reset */
+        h1{
+            font-size: 2rem;
+            padding: 0 2rem;
+        }
+
+        h2, h3{
+            font-size: 2.7rem;
+        }
+
+        span{
+            display: inline-block;
+            
+            max-width: 100%;
+            color: white;
+            
+            
+        }
+
+        section:nth-child(3)  figure{
+            display: inline-block;
+            width: 50%;
+            position: relative;
+        }
+
+        section:nth-child(3) figcaption{
+            position: absolute;
+        }
+
+        span:hover{
+            color: #EB43A3;
+        }
+
+    /* Ecran d'une taille minimale de 750px */
+    @media screen and (min-width: 750px){
+
+      
+
+
+        
+
+
+
+
+
+
+
+
+ 
