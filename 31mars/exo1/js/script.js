@@ -4,7 +4,7 @@ $(document).ready( function(){
     //  créer une variable (sting) pour le titre principal du site
     var siteTitle = 'Armel <span>Developpeur full stack</span>'
 
-    // créer un tbleau pour la nav
+    // créer un tableau pour la nav
     var myNav = ['Accueil', 'Portfolio', 'Contacts' ]
 
     //  Créer un objet pour les titres des pages
@@ -36,6 +36,14 @@ $(document).ready( function(){
     //  Générer une balise nav + ul dans le header
     myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i><ul></ul> </nav>');
 
+    //  Activer le burgerMenu au click sur la balise .fa-bars
+    $('.fa-bars').click( function(){
+
+        $('nav ul').toggleClass('toggleBurger');
+    } );
+
+
+
     //  Faire une boucle for(){......} sur myNav pour générer les liens de la nav
     for( var i = 0; i < myNav.length; i++ ){
 
@@ -52,9 +60,16 @@ $(document).ready( function(){
     myMain.append( '<h2>' + myTitles.Accueil + '</h2>' );
     myMain.append( '<section>' + myContent.Accueil + '</section>' );
 
+    //  Ajouter la class active sur la 1ère li de la nav
+    $('nav li:first').addClass('active');
+
+
     //  Capter l'évènement click sur les balises a en bloquant le comportement naturel des balises a 
 
     $('a').click( function(evt){
+
+        // Supprimer la class  active des balises li de la nav
+        $('nav li').removeClass('active');
 
         // Bloquer le comportement naturel de la balise
         evt.preventDefault();
@@ -74,15 +89,27 @@ $(document).ready( function(){
             //  Sélectionner la section pour changer le Contenu
             $('section').html( myContent.Accueil );
 
+            //  Ajouter la class active sur la balise li de la balise à Sélectionner
+            $(this).parent().addClass('active');
+
 
         } else if( $(this).attr('href') == 'Portfolio' ){
             $('h2').text( myTitles.Portfolio );
             $('section').html( myContent.Portfolio );
 
+            //  Ajouter la class active sur la balise li de la balise à Sélectionner
+            $(this).parent().addClass('active');
+
         }else{
             $('h2').text( myTitles.Contacts );
             $('section').html( myContent.Contacts );
-        }
+
+            //  Ajouter la class active sur la balise li de la balise à Sélectionner
+            $(this).parent().addClass('active');
+        };
+
+        // Fermer le burgerMenu
+        $('nav ul').removeClass('toggleBurger');
 
 
         
