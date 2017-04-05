@@ -1,0 +1,11 @@
+article{
+    width: 10rem;
+    height: 10rem;
+    color: white;
+    background: red;
+    position: relative;
+}
+
+section:nth-child(2) article, section:nth-child(5) article{
+    display: none;
+}
