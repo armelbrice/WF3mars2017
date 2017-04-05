@@ -45,9 +45,46 @@ $(document).ready(function(){
         //  capter la soumission du formulaire
         $('form').submit(function(evt){
 
+            // créer une variable pour la validation finale du formulaire
+            var formScore = 0;
+
+            // Bloquer le comportement du formulaire
             evt.preventDefault();
 
             console.log('Submit du formulaire');
+
+            //  Minimum 4 caractères pour l'email et 5 caractères pour le message
+            if( $('[type="email"]').val().length < 4 ){
+                    console.log('Email manquant');
+
+            } else{
+                console.log('Email OK');
+                formScore++;
+
+            };
+
+            if( $('textarea').val().length < 5 ){
+                console.log('Message manquant');
+
+
+            } else{
+                console.log('Message OK');
+                formScore++;
+            };
+
+            // Vérifier la valeur de formScore
+            if( formScore == 2 ){
+                console.log('Le formulaire est validé !')
+
+                // => Envoi des données vers le fichier de traitement PHP
+                    // => Le fichier PHP répond true: je peux continuer mon code
+
+                    // Ajouter le message dans la balise aside
+                    $('aside').append('<h3>' + $('textarea').val() + '</h3><p>' + $('[type="email"]').val() + '</p>');
+
+                    // Reset du formulaire
+                    $('form')[0].reset();
+            };
 
 
 
@@ -56,7 +93,7 @@ $(document).ready(function(){
 
 
 
-    }
+    };
 
     
 
