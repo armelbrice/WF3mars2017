@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda:400,700');
+
+*{
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+}
+
+html{
+    font-size: 62.5%;
+
+}
+
+body{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+main{
+    padding: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+        list-style: none;
+}
+h1{
+    font-size: 3rem;
+    font-family: 'Merienda', cursive;
+    color: #FFF;
+}
+
+h2{
+    font-family: 'Merienda', cursive;
+    color: #2F4073;
+    padding: 2rem;
+
+}
+
+
+
+/*
+Style header
+*/
+
+header{
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    padding-bottom: 7rem;
+    
+}
+
+ h1 span {
+        display: block;
+        font-family: 'Merienda', cursive;
+        color: white;
+}
+
+nav{
+    background-color: #061339;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    font-size: 2rem;
+    font-family: 'Merienda', cursive;
+    
+}
+
+/*
+Style main
+*/
+
+main{
+    background-color:lightgrey;
+
+}
+
+select{
+    width: 80%;
+    margin: auto;
+}
+
+textarea{
+        min-height: 20rem;
+        width: 35rem;
+}
+
+form{
+    border: .1rem solid grey;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+ img:last-of-type {
+    background-color: #7885A5;
+
+}
+
+
+
+
+
+
