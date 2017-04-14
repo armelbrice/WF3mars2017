@@ -17,7 +17,7 @@ $(document).ready(function(){
         // Décocher les checkbox
         var checkboxArray = $('[type="checkbox" ]').not($(this) )
 
-        for( var i =0; i < checkboxArray.length; i++){
+        for( var i = 0; i < checkboxArray.length; i++){
             checkboxArray[i].checked = false;
 
             // Modifier l'image
