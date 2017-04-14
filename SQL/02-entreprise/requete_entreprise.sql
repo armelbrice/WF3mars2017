@@ -212,8 +212,10 @@ SELECT id_employes, nom, prenom, date_embauche FROM employes  ORDER BY date_emba
 -- *****************************************
 
 --1. Quel est l'id_abonne de Laura ?
+SELECT id_abonne  FROM abonne WHERE prenom = "Laura";
 
 --2. L'abonné d'id_abonne 2 est venu emprunter un livre à quelles dates ?
+SELECT 
 
 --3. Combien d'emprunts ont été effectués en tout ?
 
