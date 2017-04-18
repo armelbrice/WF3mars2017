@@ -207,27 +207,6 @@ SELECT nom, prenom, salaire FROM employes WHERE service = 'commercial' ORDER BY 
 SELECT id_employes, nom, prenom, date_embauche FROM employes  ORDER BY date_embauche DESC LIMIT 0,1;
 
 
--- *****************************************
---Exercices
--- *****************************************
-
---1. Quel est l'id_abonne de Laura ?
-SELECT id_abonne  FROM abonne WHERE prenom = "Laura";
-
---2. L'abonné d'id_abonne 2 est venu emprunter un livre à quelles dates ?
-SELECT 
-
---3. Combien d'emprunts ont été effectués en tout ?
-
---4. Combien de livres sont sortis le 2011-12-19 ?
-
---5. Une Vie est de quel auteur ?
-
---6. De combien de livres d'Alexandre Dumas dispose-t-on ?
-
---7. Quel id_livre est le plus emprunté ?
-
---8. Quel id_abonne emprunte le plus de livres ?
 
 
 
