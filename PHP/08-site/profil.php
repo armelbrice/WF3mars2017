@@ -27,6 +27,22 @@ $contenu .= '<div><h3>Voici vos informations de profil</h3>';
 $contenu .= '</div>';
 
 
+//  Exercice :
+/* 1- Affichez le suivi des commandes du membre (s'il y en a) dans une liste <ul><li> : id_commande, date et état de la commande. S'il n'y en a pas, vous affichez "aucune commande en cours".
+
+
+
+
+
+   2-
+
+*/
+
+
+
+
+
+
 //------------------------- AFFICHAGE --------------------------
 require_once('inc/haut.inc.php');
 echo $contenu;

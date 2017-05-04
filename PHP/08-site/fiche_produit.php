@@ -46,7 +46,7 @@ if (isset($_GET['id_produit'])) { // s'il existe l'indice id_produit dans l'url
 
 
         //  Affichage du formulaire d'ajout au panier si stock > 0 :
-        $contenu .= '<div class="col-md-4>';
+        $contenu .= '<div class="col-md-4">';
             if ($produit['stock'] > 0) {
                 // s'il y a du stock, on met le bouton d'ajout au panier
                 $contenu .= '<form method="post" action="panier.php">';
@@ -71,7 +71,7 @@ if (isset($_GET['id_produit'])) { // s'il existe l'indice id_produit dans l'url
 
             
             //  4- Lien retour vers la boutique :
-            $contenu .= '<br>²<p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
+            $contenu .= '<br><p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
 
 
         $contenu .= '</div>';
@@ -86,6 +86,34 @@ if (isset($_GET['id_produit'])) { // s'il existe l'indice id_produit dans l'url
     header('location:boutique.php'); // on le redirige vers la boutique
     exit();
 }
+
+
+//  Affichage d'une fenêtre modale pour confirmer l'ajout du produit au panier :
+if (isset($_GET['statut_produit']) && $_GET['statut_produit'] == 'ajoute') {
+
+    //  on met dans une variable le HTML de la fenêtre modale pour l'afficher ensuite :
+    $contenu_gauche = '<div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Le produit a bien été ajouté au panier</h4>
+
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <p><a href="panier.php" class="btn btn-success btn-xs">Voir le panier</a></p>
+                                        <p><a href="boutique.php" class="btn btn-info btn-xs">Continuer ses achats</a></p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>';
+
+
+}
+
+
 
 // -------------
 //  Exercice
@@ -159,12 +187,14 @@ echo $contenu_gauche; // recevra le pop up de confirmation d'ajout au panier
         <?php echo $aside; // affiche les produits suggérés ?>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            //  affiche la fenêtre modale :
+            $("#myModal").modal("show");
 
 
-
-
-
-
+        });
+    </script>
 
 
 
