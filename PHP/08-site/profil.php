@@ -38,6 +38,49 @@ $contenu .= '</div>';
 
 */
 
+/*
+	$suivi_commande = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = :id_membre", array('id_membre' =>$_SESSION['membre']['id_membre']));
+	if ($suivi_commande->rowCount()) {
+	while ($resultat = $suivi_commande->fetch(PDO::FETCH_ASSOC)) {
+		$contenu .= '<ul>
+						<li>Numero de commande: '. $resultat['id_commande'] .'</li>
+						<li>Date de la commande: '. $resultat['date_enregistrement'] .'</li>
+						<li>Etat de la commande: '. $resultat['etat'] .'</li>
+		
+					</ul>';
+	}
+} else {
+	echo 'Aucune commande en cours';
+}
+*/
+
+// correction
+// Requête
+$id_membre = $_SESSION['membre']['id_membre'];
+
+$resultat = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = '$id_membre'"); //  Dans une requête sql on met les variables entre quote comme '$id_membre'. Pour mémoire si on y met un array, celui ci perd ses quotes autour de l'indice. A savoir : on ne peut pas le faire avec un array multidimensionnel.
+
+//  Sil y a des commandes dans $resultat, on les affiche :
+if ($resultat->rowCount() > 0) {
+	// on affiche les commandes :
+	$contenu .= '<ul>';
+	while ($commande = $resultat->fetch(PDO::FETCH_ASSOC)) { // transforme objet $resultat en array associatif par fetch_assoc et la valeur est stockée dans $commande
+	
+		$contenu .= '<li>Votre commande n°'. $commande['id_commande'] .' du '. $commande['date_enregistrement'] .' est actuellement '. $commande['etat'] .'</li>';
+
+	}
+	$contenu .= '</ul>';
+
+
+
+} else {
+	//  il n y a pas de commande :
+	$contenu .= 'Aucune commande en cours';
+}
+
+
+
+
 
 
 
