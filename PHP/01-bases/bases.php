@@ -341,7 +341,7 @@ echo strftime('%Y-%m-%d', strtotime('23-05-2015'));
 
 echo '<br>';
 // Transformer 2015-05-23 en 23-05-2015 :
-echo strftime('%d-%m-%Y', strtotime('2015-05-23'));
+echo strftime('%d-%m-%Y',case;
 
 echo '<br>';
 // Cette méthode de transformation est limitée dans le temps (2038)... on peut donc utiliser une autre méthode avec la classe DateTime :
