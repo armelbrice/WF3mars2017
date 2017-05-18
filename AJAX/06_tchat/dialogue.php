@@ -1,8 +1,9 @@
 <?php
 require_once('inc/init.inc.php');
 if(empty($_SESSION['pseudo'])) {
-    //  si l'utilisateur est déjà présent dans lla session, on le redirige vers dialogue.php'
+    //  si l'utilisateur est déjà présent dans la session, on le redirige vers dialogue.php'
     header("location:index.php");
+}    
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +34,69 @@ if(empty($_SESSION['pseudo'])) {
     </div>
     <script>
 
+        // faire en sorte que si l'utilisateur appuie sur la touche "entrée" cela enregistre le message code de la touche "entrée" => 13
+        document.addEventListener("keypress", function(event){
+            if(event.keyCode == 13) {
+                event.preventDefault(); // pour éviter le retour chariot dans le textarea
+                // on recupère le message
+                var messageValeur = document.getElementById("message").value;
 
+                // on envoie notre ajax pour enregistrement
+                ajax("postMessage", messageValeur);
+
+                // on envoie une autre requête pour afficher les messages
+                ajax("message_tchat");
+
+                // on vide le champ
+                document.getElementById("message").value ="";
+
+
+            }
+
+        });
+        
+
+
+
+        //  ajout de :) dans le message lors du clic sur le smiley
+        document.getElementById("smiley"). addEventListener("click", function(event){
+            document.getElementById("message").value = document.getElementById("message").value + event.target.alt;
+            document.getElementById("message").focus(); // focus permet de remettre le curseur
+            console.log(event);
+        });
 
 
         // ajax('message_tchat');
 
         // Pour récupérer la liste des membres connectés
-        setInterval("ajax(liste_membre_connecte)", 11000);
+        setInterval("ajax(liste_membre_connecte)", 3333);
+
+        // Pour récupérer la liste des messages
+        setInterval("ajax(liste_message_tchat)", 2000);
+
+        // Enregistrement du message via le bouton submit
+            document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault(); // on bloque le rechargement de la page lors de la soumission
+
+            // on recupère le message
+            var messageValeur = document.getElementById("message").value;
+
+            // on envoie notre ajax pour enregistrement
+            ajax("postMessage", messageValeur);
+
+            // on envoie une autre requête pour afficher les messages
+            ajax("message_tchat");
+
+            // on vide le champ
+            document.getElementById("message").value ="";
+
+        });
+
+        // FERMETURE DE LA PAGE PAR L'UTILISATEUR
+        // on le retire du fichier prenom.txt
+        window.onbeforeunload = function() {
+            ajax('liste_membre_connecte', '<?php echo $_SESSION['pseudo']; ?>');
+        };
 
 
         // déclaration de la fonction ajax
@@ -69,7 +126,7 @@ if(empty($_SESSION['pseudo'])) {
 
                 document.getElementById(mode).innerHTML = obj.resultat;
                 var boitemessage = document.getElementById("message_tchat");
-                document.getElementbyId(mode). scrollTop = boiteMessage.scrollHeight;
+                document.getElementById(mode). scrollTop = boiteMessage.scrollHeight;
                 // permet de descendre l'ascenceur de ce div et de voir les derniers messages
 
 
