@@ -1,0 +1,42 @@
+Arborescence :
+app/ : La configuration de l'application
+src/ : Le code php et html spécifique à notre projet
+vendor/ : code général (coeur) de l'application et les entités
+web/ : Repertoire web racine. Le point d'entrée de notre application (index.php, img/ photo/ js/ css/ font/) (asset)
+
+-------------------------------------------
+Natrue des différents fichiers :
+
+app/
+    Config/
+        parameters.php :
+        contient toutes les informations de connexion à la base de données et autres paramètres...
+
+    Config.php:
+    Contient l'inclusion des paramètres de connexion à la BDD, et les retourne dans une méthode getParametersConnect()
+
+
+vendor/
+    autoload.php :
+    Permet d'inclure les bons fichiers lors d'un 'new' (instanciation)
+    Attention seuls les controllers sont dans le dossier SRC, il faut donc préciser que si le namespace n'est pas 'Controller' alors les fichiers sont dans vendor.
+    Autre subtilité : le controller général (Controller/Controller)  est également dans vendor.
+
+    Entity/
+        Produit.php, Membre.php, Commande.php
+        Classes qui contiennent toutes les propriétés (private)  de nos entités et getters et les setters. POPO (Plane Old PHP Object)
+
+    
+web/
+    index.php :
+    Clé d'entrée de notre application. (SILEX : index.php / Symfony : app.php)
+
+vendor/
+    Manager/
+        PDOManager.php :
+        Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO grâce auquel nous pourrons effectuer des requêtes.
+        Cette classe est un Singleton (singlette). Cela signifie qu'il ne peut y avoir qu'un seul objet issu de cette classe.
+
+        EntityRepository.php :
+        Un repository centralise tout ce qui touche à la base de données et à la récupération des entités. Concrètement il ne doit pas y avoir de requêtes ailleurs que dans un repository.
+        Si une entité a besoin de requêtes spécifiques (exemple : jointure), dans ce cas les requêtes seront codées directement dans le repository en question.
