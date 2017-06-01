@@ -24,8 +24,8 @@ class EntityRepository
         // get_called_class : me retourne le nom de la classe dans laquelle je suis.
         // exemple : Repository\ProduitRepository
 
-        // return strtolower(str_replace(array('Repository\\', 'Repository'), '', get_called_class()));
-        return 'produit';
+        return strtolower(str_replace(array('Repository\\', 'Repository'), '', get_called_class()));
+        // return 'produit';
         
     }
 

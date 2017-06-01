@@ -40,3 +40,28 @@ vendor/
         EntityRepository.php :
         Un repository centralise tout ce qui touche à la base de données et à la récupération des entités. Concrètement il ne doit pas y avoir de requêtes ailleurs que dans un repository.
         Si une entité a besoin de requêtes spécifiques (exemple : jointure), dans ce cas les requêtes seront codées directement dans le repository en question.
+
+        Repository/
+            ProduitRepository.php :
+            Ce fichier contiendra toutes les fonctions liées à l'entité produit, demandera à EntityRepository de faire certaines requëtes. Et si l'entité a besoin de requëtes spécifiques, elles eront codées ici.
+
+        Controller/
+            Controller.php
+            C'est le controleur général de l'application. Il a 2 missions :
+            1/ Récupérer le repository correspondant à l'entité dans laquelle je suis : getrepository()
+            2/ Affiche la vue correspondant à l'action : render()
+
+src
+    Controller/
+        ProduitController.php :
+        Cette classe hérite du controleur général de l'application, et permet de déclancher toutes les actions liées à l'entité produit.
+
+View/
+    Produit/
+        fiche_produit.php, boutique.php, categorie.php :
+
+        Ces trois fichiers correspondent aux vues des actions (respectivement) affiche($id), afficheAll()et categorie($categorie) de notre entité produit.
+        Plus tard ces fichiers seront décomposés et auront l'extension .html(lorsque la méthode render() du controleur général sera opérationnelle)
+
+    layout.html :
+        Le layout représente la page générale, le template de base. Il peut y avoir plusieurs layout s'il y a plusieurs structures de pages dans notre application (home, contact, mentions légales, inscription...)
