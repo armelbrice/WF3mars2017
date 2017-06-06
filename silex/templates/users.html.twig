@@ -1,15 +1,28 @@
-<table>
-    
-    
-    {% for users in user %}
+{% extends "layout.html.twig" %}
+
+
+{% block content %}
+    <table>
         <tr>
-            {% for prop in user %}
-            <p>{{ prop }}</p>
-            {% endfor %}
-            
+            <td>Id</td>
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Email</td>
+            <td>Adresse</td>
         </tr>
         
-    {% endfor %}
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.adresse }}</td>
+            </tr>
+        {% endfor %}
+    </table>
     
-    
-</table>
+{% endblock %} 
+
+
+
