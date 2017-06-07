@@ -62,6 +62,12 @@ class FirstController
     
     public function userAction(Application $app, $userId)
     {
+        $user = $app['db']->fetchAssoc('SELECT * FROM user WHERE id=' . (int)$userId);
         
+        return $app['twig']->render(
+                'user.html.twig',
+                ['user' => $user]
+                
+        );
     }
 }
