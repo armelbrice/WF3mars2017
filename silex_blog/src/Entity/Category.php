@@ -1,11 +1,10 @@
 <?php
-
 namespace Entity;
 
-class Category 
+class Category
 {
     /**
-     * 
+     *
      * @var int
      */
     private $id;
@@ -16,47 +15,48 @@ class Category
      */
     private $name;
     
-    
     /**
      * 
-     * @return type
+     * @return int
      */
-    public function getId() 
+    public function getId()
     {
         return $this->id;
     }
-    
-    
+
     /**
      * 
-     * @return type
+     * @return string
      */
-    public function getName()
+    public function getName() 
     {
         return $this->name;
     }
-    
+
     /**
      * 
-     * @param type $id
+     * @param int $id
      * @return $this
      */
     public function setId($id) 
     {
         $this->id = $id;
+        
         return $this;
     }
-    
+
     /**
      * 
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name) 
     {
         $this->name = $name;
+        
         return $this;
     }
+
 
 
 }
