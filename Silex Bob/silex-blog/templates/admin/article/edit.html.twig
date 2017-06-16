@@ -1,0 +1,38 @@
+{% extends "layout.html.twig" %}
+
+{% block title 'Admin article' %}
+    
+{% block content %}
+    <div class="jumbotron">
+        <h2>Edition article</h2>
+    </div>
+    <form method="post" class="col-md-5">
+        <div class="form-group">
+            <div class="form-group" >
+                <label>Titre</label>
+                <input type="text" name="title" class="form-control" value="{{ article.title }}">
+            </div>
+            <div class="form-group" >
+                <label>Résumé</label>
+                <textarea id="short" name="short_content" class="form-control">{{ article.short_content }}</textarea>
+            </div>
+            <div class="form-group" >
+                <label>Article</label>
+                <textarea id="article" name="content" class="form-control">{{ article.content }}</textarea>
+            </div>
+            <div class="form-group" >
+                <label class="control-label">Rubrique</label>
+                <select name="category" class="form-control" >
+                    <option value="">Choisissez une rubrique</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}"
+                                {% if category.id == article.categoryId %}selected{% endif %}>{{ category.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a href="{{ path('admin_articles') }}" class="btn btn-default">Annuler</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,32 @@
+étapes conseillées pour l'exercice 3 :
+
+ - Concevoir une base de données contenant une table de voitures avec les 4 champs + un champ d'id auto-incrémenté
+
+ - Créer la page de formulaire d'ajout de voiture avec les quatre champs (form.php par exemple). Ce formulaire ne contient que le code HTML du formulaire.
+
+ - Créer le page de traitement du formulaire (ajax.php par exemple). Il vérifiera l'envoi d'un POST et remplira un tableau d'erreurs si certains champs n'ont pas été correctement remplis (si ils sont vides ou inexistants en fait).
+
+ Cette page doit renvoyer un tableau formatté en JSON :
+ 	1. si il n'y pas d'erreur : le tableau aura cette allure :
+ 	array (
+ 		'status' => 'success',
+ 		'msg' => 'La voiture a bien été ajoutée'
+ 	)
+ 	Si il y a des erreurs, il prendra cette allure :
+ 	array(
+ 		'status' => 'error',
+ 		'msg' => '... LISTE DES ERREURS JOINTES A L AIDE D UN <br/>'
+ 	)
+
+ 	2. Ce tableau doit ensuite être renvoyé sous la forme d'un json (méthode json_encode)
+
+
+ Vous pouvez faire en sorte que l'action du formulaire pointe sur cette page et tester le résultat sans ajax dans un premier temps.
+
+ - Créer le fichier javascript permettant de gérer l'envoi du formulaire en ajax ainsi que le traitement de la réponse. Ce traitement consiste à l'affichage du message du serveur (en rouge si erreur et en vert si succès).
+ 	NE PAS OUBLIER D'INCLURE CE SCRIPT DANS VOTRE PAGE form.php
+
+ 	Vous pouvez partir du code de base fourni dans le fichier ajax.js.
+
+ - Lorsque le formulaire est envoyé, la ligne doit correspondante doit être ajoutée en BDD.
+

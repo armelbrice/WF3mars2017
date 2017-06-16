@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<meta charset="utf8"/>
+	</head>
+	<body>
+		<div id="contenu">
+			<form>
+				<label>Marque :</label>
+				<input type="text" name="marque" id="marque"/><br/><br/>
+
+				<label>Modèle :</label>
+				<input type="text" name="modele" id="modele"/><br/><br/>
+
+				<label>Année :</label>
+				<input type="text" name="annee" id="annee"/><br/><br/>
+
+				<label>Couleur :</label>
+				<input type="text" name="couleur" id="couleur"/><br/><br/>
+
+				<input type="submit" value="Ajouter un véhicule" />
+			</form>
+		</div>
+		<div id="message">
+
+		</div>
+
+
+
+		<script>
+			$(function() {
+				$( "input[type=submit]" ).click(function(e) { // Lorsqu'on clique sur l'input de type "submit"
+
+					// Empêche l'actualisation de la page
+					e.preventDefault();
+
+
+					// Récuperation des valeurs du formulaire
+					var marque = $("#marque").val(); 
+					var modele = $("#modele").val();
+					var annee = $("#annee").val(); 
+					var couleur = $("#couleur").val();
+
+						
+					// Requete Ajax - Envoi des infos du formulaire vers une autre page de traitement
+					var request = $.ajax({
+						url: "read.php", // Page de la requete
+						method: "POST", // Envoi des infos en "POST"
+						data: {marqueVehicule : marque, modeleVehicule : modele, anneeConstruction : annee, couleurVehicule : couleur} // Datas envoyées à la page
+					});
+						
+
+					request.done(function( msg ) { // Success
+						msg = JSON.parse(msg); // Conversion Json en Object Javascript
+
+						if(msg.erreur == false){
+							$("#message").text("Nouvelle voiture ajoutée avec succès");
+							$("#message").css( "background-color", "green" );
+
+						}
+						else{
+							$("#message").text(msg.message);
+							$("#message").css( "background-color", "red" );
+						}
+					});
+						
+					request.fail(function( jqXHR, textStatus ) {
+						alert( "Request failed: " + textStatus ); // Si erreur de communication avec le serveur ou code erreur
+					});
+				});
+			});
+		</script>
+	<body>
+<html>
