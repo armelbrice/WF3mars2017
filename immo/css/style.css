@@ -1,0 +1,52 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+
+
+*{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        /*text-align: center;*/
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        color: black;
+        background-color:darkorange;
+        text-align: center;
+        padding: 2rem;
+       }
+
+    section{
+        border: .2rem solid #0b0b2d;
+        margin: 2rem 0 2rem 0;
+        border-radius: 2rem;
+        padding:2rem;
+    }
+
+    h1{
+        margin-bottom: 3rem;
+       
+    }
+
+    h2{
+        margin-bottom: 3rem;
+        
+        
+    }
+
+    
+    
+    
+
+  
+    

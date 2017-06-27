@@ -18,7 +18,7 @@ $app->get('/hello',function() use ($app){
 ->bind('hello')
 ;
 
-$app->get('/hello/{name}',function($name) use ($app){   // route avec paramétre variable ici (name)
+$app->get('/hello/{name}',function($name) use ($app){   // route avec paramètre variable ici (name)
     return $app['twig']->render('hello_world.html.twig',['name'=>$name]);
 })  
 ->bind('hello_world')

@@ -1,0 +1,197 @@
+ {% block content %}
+
+    <p>Pourquoi faire estimer votre bien immobilier par une agence immobilière ? Pour la garantie qu’offre un professionnel qui connaît son secteur ! Pour être sûr de vendre son bien à sa juste valeur ! </p>
+
+    <fieldset>
+        <form method="post">
+
+            <h2>Informations personnelles</h2>
+
+            
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="gender">Civilité</label>
+                    <div class="col-md-8">
+                        <select id="gender" name="gender" class="form-control input-md" required>
+                            <option value="Mlle">Mademoiselle</option>
+                            <option value="Mme">Madame</option>
+                            <option value="M">Monsieur</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="firstname">Prénom</label>
+                    <div class="col-md-8">
+                        <input id="firstname" name="firstname" type="text" class="form-control input-md" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="lastname">Nom</label>  
+                    <div class="col-md-8">
+                        <input id="lastname" name="lastname" type="text" class="form-control input-md" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email</label>  
+                    <div class="col-md-8">
+                        <input id="email" name="email" type="email" class="form-control input-md" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="city">Ville</label>  
+                    <div class="col-md-8">
+                        <input id="city" name="city" type="text" class="form-control input-md" required>
+                    </div>
+                </div>
+
+            <h2>Caractéristiques du bien</h2>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="typedebien">Type de Bien</label>           
+                <select name="typedebien" class="form-control">
+                     
+                <option value="appartement">Appartement</option>
+                <option value="loft">Loft</option>
+                <option value="atelier">Atelier</option>
+                <option value="maison">Maison</option>
+                <option value="villa">Villa</option>
+                <option value="duplex">Duplex</option>
+                <option value="triplex">Trilex</option>
+                <option value="hotel particulier">Hôtel particulier</option>
+                </select> 
+            </div>
+
+            <div class="form-group">
+                    <label class="col-md-4 control-label" for="code_postal">Code postal</label>  
+                    <div class="col-md-8">
+                        <input id="codepostal" name="codepostal" type="text" class="form-control input-md" required>
+                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nombredepieces">Nombre de pièces</label>
+                <select name="nombredepieces" class="form-control">
+                    <option value="1">Studio</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="8+">plus de 8 pièces</option>
+                    
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nombredesallesdebain">Nombre de salles de bain</label>
+                <select name="nombredesallesdebain" class="form-control">
+                    <option value="aucune">Aucune</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="4+">plus de 4 salles de bain</option>
+                    
+                </select>
+            </div>
+
+             <div class="form-group">
+                <label class="col-md-4 control-label" for="etage">Etage</label>
+                <select name="Etage" class="form-control">
+                    <option value="rdc">RDC</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="12+">plus de 12</option>
+                    
+                </select>
+            </div>
+
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="surface">Surface Carrez</label> 
+            <input type="text" name="surface" value="" placeholder="Surface carrez m2" class="form-control">
+            </div>
+
+            <label class="form-group">ascenceur</label><br>
+                <input type="radio" name="ascenceur" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="ascenceur" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">balcon</label><br>
+                <input type="radio" name="balcon" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="balcon" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">terrasse</label><br>
+                <input type="radio" name="terrasse" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="terrasse" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">cave</label><br>
+                <input type="radio" name="cave" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="cave" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">parking</label><br>
+                <input type="radio" name="parking" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="parking" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">gardien</label><br>
+                <input type="radio" name="gardien" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="gardien" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">vue exceptionnelle</label><br>
+                <input type="radio" name="vueexceptionnelle" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="vueexceptionnelle" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">bien à rénover</label><br>
+                <input type="radio" name="bienarenover" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="bienarenover" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">parties communes rénovées</label><br>
+                <input type="radio" name="partiescommunesrenovees" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="partiescommunesrenovees" id="non" value="non" checked><label for="non">non</label><br><br>
+
+            <label class="form-group">ravalement de facade récent</label><br>
+                <input type="radio" name="ravalementdefacaderecent" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="ravalementdefacaderecent" id="non" value="non" checked><label for="non">non</label><br><br>
+            
+           
+        
+            <h2>Ce bien et Vous</h2>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cebienest">Ce bien est</label>            
+                <select name="cebienest" class="form-control">
+                     
+                    <option value="residence principale">Residence principale</option>
+                    <option value="residence secondaire">Residence secondaire</option>
+                    <option value="residence locative">Residence locative</option>
+                </select> 
+            </div>
+
+            <label class="form-group">Etes vous propriétaire de ce bien?</label><br>
+                <input type="radio" name="etesvousproprietairedecebien" id="oui" value="oui"><label for="oui">oui</label>
+                <input type="radio" name="etesvousproprietairedecebien" id="non" value="non" checked><label for="non">non</label><br><br>
+
+    
+
+            <button type="submit" class="btn btn-primary">Estimez ce bien</button>
+ 
+        </form>
+    </fieldset>
+       
+    
+{% endblock %}
